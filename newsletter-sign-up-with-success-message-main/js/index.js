@@ -56,6 +56,7 @@ function handleEmailValidation(event) {
     $validText.textContent = "Valid email required";
     $email.style.backgroundColor = "hsl(4, 100%, 67%,0.5)";
     $email.style.border = "1px solid hsl(4, 100%, 67%,0.5)";
+    $email.style.color = "hsl(4, 100%, 67%)";
   } else {
     $buttonSubmit.disabled = false;
   }
