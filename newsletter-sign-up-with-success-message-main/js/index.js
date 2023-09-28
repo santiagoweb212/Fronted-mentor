@@ -7,6 +7,7 @@ const $buttonSucces = document.getElementById("sucess-hide__button");
 const $loader = document.getElementById("loader");
 const $validText = document.getElementById("valid-text");
 const $buttonSubmit = document.getElementById("button-submit");
+
 $buttonSubmit.disabled = true;
 const enviarEmail = (email) => {
   const enpoit = "https://formsubmit.co/ajax/";
@@ -54,10 +55,12 @@ function handleEmailValidation(event) {
 
   if (!validateEmail(emailValue)) {
     $validText.textContent = "Valid email required";
-    $email.style.backgroundColor = "hsl(4, 100%, 67%,0.5)";
-    $email.style.border = "1px solid hsl(4, 100%, 67%,0.5)";
-    $email.style.color = "hsl(4, 100%, 67%)";
+    
+    //agregar color al placeholder
+    $email.classList.add("email");
   } else {
+   $validText.style.display="none";
+    $email.classList.remove("email");
     $buttonSubmit.disabled = false;
   }
 }
