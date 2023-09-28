@@ -62,6 +62,7 @@ function handleEmailValidation(event) {
    $validText.style.display="none";
     $email.classList.remove("email");
     $buttonSubmit.disabled = false;
+    $email.style.borderColor="gray";
   }
 }
 
