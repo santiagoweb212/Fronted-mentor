@@ -8,7 +8,6 @@ const $loader = document.getElementById("loader");
 const $validText = document.getElementById("valid-text");
 const $buttonSubmit = document.getElementById("button-submit");
 
-$buttonSubmit.disabled = true;
 const enviarEmail = (email) => {
   const enpoit = "https://formsubmit.co/ajax/";
   const options = {
@@ -27,7 +26,6 @@ const enviarEmail = (email) => {
     .then((res) => res.json())
     .then((data) => {
       if (data.success) {
-        console.log("esty aca");
         $successHideMessage.textContent = `A confirmation email has been sent to ${email}. Please open it and click the button inside to confirm your subscription.`;
         $successHide.classList.remove("sucess-hide");
         $container.classList.remove("container");
@@ -49,7 +47,6 @@ function validateEmail(email) {
 
 function handleEmailValidation(event) {
   const emailValue = $email.value;
-  console.log(emailValue);
 
   if (!validateEmail(emailValue)) {
     $validText.textContent = "Valid email required";
@@ -69,6 +66,14 @@ $email.addEventListener("blur", handleEmailValidation);
 
 $form.addEventListener("submit", (e) => {
   e.preventDefault();
+
+  if ($email.value === "") {
+    $validText.textContent = "Valid email required";
+    $email.style.borderColor = "red";
+    //agregar color al placeholder
+    $email.classList.add("email");
+    return;
+  }
   $loader.style.display = "block";
   enviarEmail($email.value);
 });
@@ -80,5 +85,4 @@ $buttonSucces.addEventListener("click", () => {
     $container.classList.remove("container--hide");
     $container.classList.add("container");
   }
-  console.log($successHideVisible);
 });
