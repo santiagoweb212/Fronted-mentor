@@ -98,7 +98,11 @@ main {
 .container-left__form-field label {
   font-family: "Roboto-Bold";
 }
-
+.email{
+  background-color: hsl(4, 100%, 67%,0.5);
+ 
+  color: var(--neutral-dark-slate-grey);
+}
 #email {
   font-family: "Roboto-Normal";
   width: 100%;
@@ -108,6 +112,10 @@ main {
   border: 1px solid var(--neutral-grey);
   outline: none;
  
+}
+
+.email::placeholder{
+  color: var(--primary-tomato);
 }
 #valid-text{
   
