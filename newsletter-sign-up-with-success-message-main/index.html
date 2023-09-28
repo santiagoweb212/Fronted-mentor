@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
+    <title>
+      Frontend Mentor | Newsletter sign-up form with success message
+    </title>
+
+    <style></style>
+  </head>
+  <body>
+    <main>
+      <div class="container">
+        <div class="loader" id="loader"></div>
+        <section class="container-left">
+          <h1 class="container-left__title">Stay updated!</h1>
+          <p class="container-left__p">
+            Join 60.000+ product managers receiving monthly updates on:
+          </p>
+          <ul class="container-left__list">
+            <li>
+              <img src="./assets/images/icon-list.svg" alt="" />Product
+              discovery and building what matters
+            </li>
+            <li>
+              <img src="./assets/images/icon-list.svg" alt="" />Measuring to
+              ensure updates are a sucess
+            </li>
+            <li>
+              <img src="./assets/images/icon-list.svg" alt="" />And much more
+            </li>
+          </ul>
+          <form action="" id="form" class="container-left__form">
+            <div class="container-left__form-field">
+              <label for="email"> Email address </label>
+              <input
+                type="email"
+                id="email"
+                required
+                placeholder="email@company.com"
+              />
+              <span id="valid-text"></span>
+            </div>
+            <button id="button-submit" type="submit">
+              Subscribe to monthly newsletter
+            </button>
+          </form>
+          <div class="attribution">
+            Challenge by
+            <a
+              href="https://www.frontendmentor.io?ref=challenge"
+              target="_blank"
+              >Frontend Mentor</a
+            >. Coded by <a href="#">Your Name Here</a>.
+          </div>
+        </section>
+        <section class="container-right">
+          <img src="./assets/images/illustration-sign-up-desktop.svg" alt="" />
+        </section>
+      </div>
+      <div class="sucess-hide">
+        <div>
+          <img src="./assets/images/icon-success.svg" alt="" />
+          <h2>Thanks for subscribing!</h2>
+          <p id="sucess-hide__message"></p>
+        </div>
+
+        <button
+          id="sucess-hide__button"
+          type="button"
+          class="sucess-hide__button"
+        >
+          Dismiss message
+        </button>
+      </div>
+    </main>
+  </body>
+  <script src="./js/index.js"></script>
+</html>

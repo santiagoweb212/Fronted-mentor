@@ -1,0 +1,238 @@
+:root {
+  --primary-tomato: hsl(4, 100%, 67%);
+  --neutral-dark-slate-grey: hsl(234, 29%, 20%);
+  --neutral-charcoal-grey: hsl(235, 18%, 26%);
+  --neutral-grey: hsl(231, 7%, 60%);
+  --neutral-white: hsl(0, 0%, 100%);
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+}
+@font-face {
+  font-family: "Roboto-Bold";
+  src: url("../assets/fonts/Roboto-Bold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Roboto-Normal";
+  src: url("../assets/fonts/Roboto-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+main {
+  width: 100%;
+  height: 100vh;
+  background-color: var(--neutral-dark-slate-grey);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  max-width: 800px;
+  height: auto;
+  position: relative;
+  display: flex;
+  background-color: var(--neutral-white);
+  gap: 1em;
+  padding: 1.5em;
+  border-radius: 0.5em;
+}
+.container--hide {
+  display: none;
+}
+.container-left {
+  width: 60%;
+  height: 100%;
+
+  align-self: center;
+}
+.container-left__title {
+  font-family: "Roboto-Bold";
+  font-size: 2.5em;
+  color: var(--neutral-dark-slate-grey);
+  padding: 0.2em 0;
+}
+.container-left__p {
+  font-family: "Roboto-Normal";
+  font-size: 1.2em;
+  padding: 0.2em 0 1em 0;
+}
+.container-left__list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+}
+.container-left__list li {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  font-family: "Roboto-Normal";
+}
+.container-right {
+  width: 40%;
+  height: 100%;
+}
+.container-right img {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.container-left__form {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  padding-top: 1em;
+}
+.container-left__form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1em;
+  position: relative;
+}
+.container-left__form-field label {
+  font-family: "Roboto-Bold";
+}
+
+#email {
+  font-family: "Roboto-Normal";
+  width: 100%;
+  padding: 1em;
+  font-size: 1.1rem;
+  border-radius: 0.5em;
+  border: 1px solid var(--neutral-grey);
+  outline: none;
+ 
+}
+#valid-text{
+  
+  color: var(--primary-tomato);
+  position: absolute;
+  font-family: "Roboto-Bold";
+  font-size: .8rem;
+  top: 0;
+  right: 0;
+}
+.container-left__form button {
+  width: 100%;
+  padding: 1em;
+  font-family: "Roboto-Bold";
+  color: var(--neutral-white);
+  background-color: var(--neutral-dark-slate-grey);
+  font-size: 1.1rem;
+  border-radius: 0.5em;
+  border: 0;
+}
+.container-left__form button:hover {
+  cursor: pointer;
+  background-color: var(--primary-tomato);
+}
+/* -----------sucess-hide -------*/
+.sucess-hide {
+  display: none;
+}
+.sucess-hide--visible {
+  display: block;
+  max-width: 500px;
+  background-color: var(--neutral-white);
+  font-family: "Roboto-Bold";
+  font-size: 2.5rem;
+  border-radius: 0.3em;
+  padding: 1em;
+}
+#sucess-hide__message {
+  font-family: "Roboto-Normal";
+  font-size: 1rem;
+  padding: 1em 0;
+}
+.sucess-hide__button {
+  background-color: var(--neutral-dark-slate-grey);
+  color: var(--neutral-white);
+  border: 0;
+  border-radius: 0.5em;
+  font-family: "Roboto-Bold";
+  width: 100%;
+  padding: 1em;
+  cursor: pointer;
+}
+/* -----loader---- */
+
+.loader {
+  background-color: aqua;
+  width: 50px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  padding: 3px;
+  background: radial-gradient(farthest-side, #ffa516 95%, #0000) 50% 0/12px 12px
+      no-repeat,
+    radial-gradient(
+        farthest-side,
+        #0000 calc(100% - 5px),
+        #ffa516 calc(100% - 4px)
+      )
+      content-box;
+  animation: l6 2s infinite;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -27px;
+  margin-left: -27px;
+  display: none;
+}
+@keyframes l6 {
+  to {
+    transform: rotate(1turn);
+  }
+}
+/* -------------atribution------------- */
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column-reverse;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+  }
+  .container-right {
+    height: 45%;
+    width: 100%;
+  }
+  .container-right img {
+    content: url("../assets/images/illustration-sign-up-mobile.svg");
+    width: 100%;
+  }
+  .container-left {
+    width: 100%;
+    padding: 0 1em;
+  }
+  .container-left__title {
+    color: var(--neutral-dark-slate-grey);
+  }
+  .sucess-hide--visible {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    width: 100%;
+    height: 100vh;
+    background-color: var(--neutral-white);
+    font-family: "Roboto-Bold";
+    font-size: 2.5rem;
+    border-radius: 0;
+    padding: 2em 1em 1em 1em;
+  }
+  .sucess-hide--visible img {
+    width: 2em;
+  }
+}
