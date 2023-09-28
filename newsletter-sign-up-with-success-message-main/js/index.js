@@ -55,7 +55,7 @@ function handleEmailValidation(event) {
 
   if (!validateEmail(emailValue)) {
     $validText.textContent = "Valid email required";
-    
+    $email.style.borderColor="red";
     //agregar color al placeholder
     $email.classList.add("email");
   } else {
