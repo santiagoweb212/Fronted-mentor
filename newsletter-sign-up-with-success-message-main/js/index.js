@@ -26,7 +26,6 @@ const enviarEmail = (email) => {
   fetch(`${enpoit}${email}`, options)
     .then((res) => res.json())
     .then((data) => {
-      console.log(data);
       if (data.success) {
         console.log("esty aca");
         $successHideMessage.textContent = `A confirmation email has been sent to ${email}. Please open it and click the button inside to confirm your subscription.`;
@@ -35,7 +34,6 @@ const enviarEmail = (email) => {
         $container.classList.add("container--hide");
         $successHide.classList.add("sucess-hide--visible");
       }
-      console.log(data);
     })
     .catch((error) => {
       console.log(error);
@@ -55,14 +53,14 @@ function handleEmailValidation(event) {
 
   if (!validateEmail(emailValue)) {
     $validText.textContent = "Valid email required";
-    $email.style.borderColor="red";
+    $email.style.borderColor = "red";
     //agregar color al placeholder
     $email.classList.add("email");
   } else {
-   $validText.style.display="none";
+    $validText.style.display = "none";
     $email.classList.remove("email");
     $buttonSubmit.disabled = false;
-    $email.style.borderColor="gray";
+    $email.style.borderColor = "gray";
   }
 }
 
